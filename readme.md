@@ -18,17 +18,17 @@ A diferença que eu adicionei foi a opção de definir um começo e um tempo que
 ## Configuração do Player
 O Player tem cinco configurações principais:
 
-**epNumber**
+**epNumber**  
 Número do episódio ou o que quiser colocar no retangulo superior
 
-**title**
+**title**  
 Título do episódio ou o que quiser colocar no retangulo inferior
 
-**file**
+**file**  
 O caminho do seu arquivo de audio partindo da raíz
 
-**cutStart** (opcional)
+**cutStart** (opcional)  
 Em que segundo do audio começar a tocar
 
-**cutLength** (opcional)
+**cutLength** (opcional)  
 Por quantos segundos tocar o áudio
