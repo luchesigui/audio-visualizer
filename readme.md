@@ -4,7 +4,7 @@
 Esse projeto nasceu depois de uma busca por ferramentas para divulgação de podcast.
 Nessa busca, o mais perto que cheguei foi um template de After Effects, o que não me ajudou muito.
 
-Procurando alternativas então, encontrei o [howler.js](https://howlerjs.com/) e foi no demo "Music Player" dele, encontrei tanto a solução para manusear o áudio, quanto a parte das ondas. Na verdade, é de lá que vem boa parte do código desse projeto.
+Procurando alternativas então, encontrei o [howler.js](https://howlerjs.com/) e foi no demo "Music Player" dele, encontrei tanto a solução para manusear o áudio, quanto a parte das ondas. Na verdade, é de lá que vem boa parte do código desse projeto. Claro, contando com a ajuda visual da excelente [@mandyellow](https://github.com/mandyellow).
 
 A diferença que eu adicionei foi a opção de definir um começo e um tempo que o áudio vai ficar tocando, ideal para criar pequenos drops para ser compartilhado nos stories do Instagram, por exemplo. Para isso é só ativar o modo responsivo do seu navegador e mudar para uma visão de celular.
 
