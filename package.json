@@ -1,0 +1,23 @@
+{
+  "name": "drop-maker",
+  "version": "1.0.0",
+  "description": "![](assets/img/lifehacking-player.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run copy",
+    "copy": "cp assets/episodios/cartoes-de-credito.mp3 ~/Desktop && npm run convert",
+    "convert": "cd ~/Desktop && ffmpeg -ss 3 -i loop-file.webm cut.mp4 && ffmpeg -stream_loop -1 -i cut.mp4 -i cartoes-de-credito.mp3 -shortest -map 0:v:0 -map 1:a:0 -y episodio.mp4 && npm run sendback",
+    "sendback": "mv ~/Desktop/episodio.mp4 ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guiluchesi/podcast-to-social.git"
+  },
+  "keywords": [],
+  "author": "Guilherme Luchesi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guiluchesi/podcast-to-social/issues"
+  },
+  "homepage": "https://github.com/guiluchesi/podcast-to-social#readme"
+}
