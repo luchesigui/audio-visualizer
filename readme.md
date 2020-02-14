@@ -32,3 +32,9 @@ Em que segundo do audio começar a tocar
 
 **cutLength** (opcional)  
 Por quantos segundos tocar o áudio
+
+## BETA: Automação de Produção
+Ao acessar a página, apertar R vai solicitar autorização para gravar a tela e gerar um recorte de 5 segundos (configurável no `player.js`) como `loop-file.webm` no diretório de download padrão do navegador.
+No `package.json`, configurar nome do arquivo de áudio e diretório do loop-file e rodar o comando `npm start`. Esse comando vai copiar o mp3 pra onde tem o `loop-file.webm`, vai rodar um conversor de webm para mp4 cortando os 3 primeiros segundos e criar um arquivo de vídeo com o loop do `loop-file` do tamanho do mp3 com o áudio ao fundo e, por fim, move o arquivo final de volta pra pasta do projeto.
+
+PS - Ter o [FFmpeg](https://github.com/FFmpeg/FFmpeg) instalado é requisito para rodar os scripts acima.
