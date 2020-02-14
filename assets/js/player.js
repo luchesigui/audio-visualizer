@@ -78,8 +78,29 @@ document.addEventListener('click', togglePlay);
 document.addEventListener('keyup', (e) => {
   if(e.keyCode == 32){
     togglePlay();
+    return;
+  }
+
+  if(e.keyCode == 82){
+    record();
   }
 });
+
+async function record() {
+  let stream = await navigator.mediaDevices.getDisplayMedia();
+  let recorder = new RecordRTCPromisesHandler(stream, {
+    type: 'video'
+  });
+  recorder.startRecording();
+  togglePlay();
+  
+  const sleep = m => new Promise(r => setTimeout(r, m));
+  await sleep(5000);
+  
+  await recorder.stopRecording();
+  let blob = await recorder.getBlob();
+  invokeSaveAsDialog(blob, 'loop-file.webm');
+}
 
 const waveform = document.getElementById('waveform');
 const wave = new SiriWave({
@@ -110,9 +131,9 @@ resize();
 window.addEventListener('resize', resize);
 
 const player = new Player({
-  epNumber: 'S1 EP0',
-  title: 'Programa Piloto',
-  file: 'piloto.mp3',
-  // cutStart: 0,
-  cutLength: 15,
+  epNumber: 'S1 EP3',
+  title: 'Cartões de Crédito',
+  file: 'assets/episodios/morando-em-airbnb.mp3',
+  cutStart: 770,
+  cutLength: 41.7,
 });
