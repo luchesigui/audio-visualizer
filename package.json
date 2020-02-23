@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "![](assets/img/lifehacking-player.jpg)",
   "main": "index.js",
+  "fileSrc": "trecho-2.mp3",
+  "fileDest": "trecho-2.mp4",
   "scripts": {
     "start": "npm run copy",
-    "copy": "cp assets/episodios/automacao-no-ios.mp3 ~/Desktop && npm run convert",
-    "convert": "cd ~/Desktop && ffmpeg -ss 3 -i loop-file.webm cut.mp4 && ffmpeg -stream_loop -1 -i cut.mp4 -i automacao-no-ios.mp3 -shortest -map 0:v:0 -map 1:a:0 -y episodio-completo.mp4",
-    "postconvert": "mv ~/Desktop/episodio-completo.mp4 ./ && cd ~/Desktop && rm automacao-no-ios.mp3 loop-file.webm"
+    "copy": "cp assets/episodios/${npm_package_fileSrc} ~/Desktop && npm run convert",
+    "convert": "cd ~/Desktop && ffmpeg -ss 3 -i loop-file.webm cut.mp4 && ffmpeg -stream_loop -1 -i cut.mp4 -i ${npm_package_fileSrc} -shortest -map 0:v:0 -map 1:a:0 -y ${npm_package_fileDest}",
+    "postconvert": "mv ~/Desktop/${npm_package_fileDest} ./ && cd ~/Desktop && rm ${npm_package_fileSrc} loop-file.webm cut.mp4"
   },
   "repository": {
     "type": "git",
