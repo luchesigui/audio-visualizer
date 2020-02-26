@@ -6,11 +6,9 @@
   "fileSrc": "trecho-2.mp3",
   "fileDest": "trecho-2.mp4",
   "scripts": {
-    "serve": "npx serve ./",
-    "start": "npm run copy",
-    "copy": "cp assets/episodios/${npm_package_fileSrc} ~/Desktop && npm run convert",
-    "convert": "cd ~/Desktop && ffmpeg -ss 3 -i loop-file.webm cut.mp4 && ffmpeg -stream_loop -1 -i cut.mp4 -i ${npm_package_fileSrc} -shortest -map 0:v:0 -map 1:a:0 -y ${npm_package_fileDest}",
-    "postconvert": "mv ~/Desktop/${npm_package_fileDest} ./ && cd ~/Desktop && rm ${npm_package_fileSrc} loop-file.webm cut.mp4"
+    "start": "concurrently --kill-others \"npm run serve\" \"npm run record\"",
+    "serve": "serve ./",
+    "record": "node index.js"
   },
   "repository": {
     "type": "git",
