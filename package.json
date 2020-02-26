@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "description": "![](assets/img/lifehacking-player.jpg)",
   "main": "index.js",
-  "fileSrc": "trecho-2.mp3",
-  "fileDest": "trecho-2.mp4",
   "scripts": {
     "start": "concurrently --kill-others \"npm run serve\" \"npm run record\"",
     "serve": "serve ./",
