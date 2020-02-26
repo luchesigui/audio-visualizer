@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/guiluchesi/podcast-to-social/issues"
   },
-  "homepage": "https://github.com/guiluchesi/podcast-to-social#readme"
+  "homepage": "https://github.com/guiluchesi/podcast-to-social#readme",
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "serve": "^11.3.0",
+    "timecut": "^0.1.1"
+  }
 }
