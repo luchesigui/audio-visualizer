@@ -45,29 +45,8 @@
         </div>
       </div>
     </div>
+  </div>
 
-  <script>
-    document.addEventListener('submit', submitHandler)
-    function submitHandler(e) {
-      e.preventDefault();
-      // document.querySelector('button').setAttribute('disabled', true);
-
-      const data = new FormData(e.target);
-      fetch('/api', {
-        method: 'post',
-        body: data,
-      })
-      .then(res => res.json())
-      .then((res) => {
-        const link = document.createElement('a')
-
-        link.href = res.videoPath;
-        link.setAttribute('download', '')
-        link.click();
-
-        // document.querySelector('button').removeAttribute('disabled');
-      })
-    }
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
