@@ -10,11 +10,9 @@ const changeImage = (src, target = false) => {
       .backgroundImage = `url(${src})`;
   }
 
-  const newCover = document.createElement('img')
-  newCover.src = coverPath
-
-  const cover = document.getElementById('cover')
-  cover.parentNode.replaceChild(newCover, cover)
+  document
+    .getElementById('cover')
+    .src = src
 }
 
 const changeText = (text, target) => {
