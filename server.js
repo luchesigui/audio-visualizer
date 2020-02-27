@@ -4,7 +4,7 @@ const express = require('express');
 const fileUpload = require('express-fileupload');
 const { json, urlencoded } = require('body-parser');
 
-const buildVideo = require('./index');
+const buildVideo = require('./video-handler');
 
 const app = express()
 const port = 3000
