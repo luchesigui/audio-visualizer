@@ -116,8 +116,12 @@ form {
     display: block;
     margin-bottom: 25px;
     font-family: 'Roboto', 'Arial', sans-serif;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: 700;
+
+    small {
+      font-size: 0.7rem;
+    }
   }
 
   input {
@@ -152,9 +156,39 @@ form {
 }
 
 .exemplo {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  position: relative;
+  background-color: #d7d7d7;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   img {
-    width: 100%;
+    width: 200px;
+    margin-bottom: 70px;
+    margin-left: -350px;
+  }
+
+  .title-holder {
+    position: absolute;
+    left: 290px;
+    transform: translateY(30px);
+  }
+
+  #track {
+    display: block;
+    margin-top: 10px;
+    font-size: 3rem;
+  }
+
+  .title {
+    background-color: #fff;
+    font-family: 'Bebas Neue';
+    font-size: 2rem;
+    background-color: #fff;
+    display: inline-block;
+    padding: 4px 10px 0;
   }
 }
