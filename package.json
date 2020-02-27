@@ -2,11 +2,9 @@
   "name": "drop-maker",
   "version": "1.0.0",
   "description": "![](assets/img/lifehacking-player.jpg)",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "concurrently --kill-others \"npm run serve\" \"npm run record\"",
-    "serve": "serve ./",
-    "record": "node index.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -19,9 +17,12 @@
     "url": "https://github.com/guiluchesi/podcast-to-social/issues"
   },
   "homepage": "https://github.com/guiluchesi/podcast-to-social#readme",
-  "devDependencies": {
-    "concurrently": "^5.1.0",
-    "serve": "^11.3.0",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6",
+    "rimraf": "^3.0.2",
     "timecut": "^0.1.1"
   }
 }
