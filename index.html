@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <title>Podcast to Social</title>
+</head>
+<body>
+  <div class="container">
+    <hgroup>
+      <h1>Podcast to Social</h1>
+      <h2 class="h3">Gerador de visualização em vídeo para seus projetos de áudio, de podcast à música.</h2>
+    </hgroup>
+    <div class="grupo">
+      <form data-testid="form" action="/api" method="post">
+        <label for="cover">
+          Capa do Podcast / Album
+          <input required type="file" name="cover" id="cover" />
+        </label>
+        <label for="background">
+          Imagem de Fundo
+          <input required type="file" name="background" id="background" />
+        </label>
+        <label for="subtitle">
+          Subtítulo (texto superior)
+          <input required type="text" placeholder="S01 EP02" name="subtitle" id="subtitle" autofocus />
+        </label>
+        <label for="titulo">
+          Título (texto inferior)
+          <input required type="text" placeholder="Nome do episódio" name="title" id="title" />
+        </label>
+        <label for="audio">
+          Arquivo de Áudio
+          <input type="file" name="audio" id="audio" />
+        </label>
+        <button type="submit">Enviar</button>
+      </form>
+      <div class="exemplo">
+        <img src="assets/img/exemplo-podcast-to-social.jpeg" alt="Exemplo de visualização do Podcast to Social">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('submit', submitHandler)
+    function submitHandler(e) {
+      e.preventDefault();
+      // document.querySelector('button').setAttribute('disabled', true);
+
+      const data = new FormData(e.target);
+      fetch('/api', {
+        method: 'post',
+        body: data,
+      })
+      .then(res => res.json())
+      .then((res) => {
+        const link = document.createElement('a')
+
+        link.href = res.videoPath;
+        link.setAttribute('download', '')
+        link.click();
+
+        // document.querySelector('button').removeAttribute('disabled');
+      })
+    }
+  </script>
+</body>
+</html>
