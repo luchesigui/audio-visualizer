@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container episode-info">
-      <img src="assets/img/lifehacking-logo.jpg" alt="Life Hacking Logo">
+      <img id="cover" src="assets/img/lifehacking-logo.jpg" alt="Life Hacking Logo">
       <div class="title-holder">
         <div id="epNumber" class="title">S0 EP0</div>
         <div id="track" class="title">Life Hacking Podcast</div>
@@ -18,6 +18,25 @@
     </div>
 
     <div id="waveform"></div>
+    <script>
+      const params = (new URL(document.location)).searchParams;
+      document.getElementById('track').innerText = params.get('title');
+      document.getElementById('epNumber').innerText = params.get('subtitle');
+
+      const coverPath = params.get('cover');
+      if(coverPath) {
+        const newCover = document.createElement('img')
+        newCover.src = coverPath;
+  
+        const cover = document.getElementById('cover')
+        cover.parentNode.replaceChild(newCover, cover)
+      }
+
+      const backgroundPath = params.get('background');
+      if(backgroundPath) {
+        document.querySelector('body').style.backgroundImage = `url(${backgroundPath})`
+      }
+    </script>
     <script src="assets/js/siriwave.js"></script>
     <script src="assets/js/wave-config.js"></script>
   </bod>
