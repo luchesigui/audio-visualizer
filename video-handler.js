@@ -9,7 +9,7 @@ const buildVideo = async (config) => {
       height: 720
     },
     selector: 'body',
-    fps: 3,
+    fps: 24,
     duration: 2.2,
     output: 'video.mp4',
     quiet: true,
