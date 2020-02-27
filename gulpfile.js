@@ -26,9 +26,7 @@ const concatJsTask = (config) => {
     .pipe(plumber())
     .pipe(sourceMaps.init())
     .pipe(concat('main.js'))
-    .pipe(browserify({
-      insertGlobals : true,
-    }))
+    .pipe(browserify())
     .pipe(sourceMaps.write('.'))
     .pipe(dest(config.dest))
     .pipe(browserSync.stream())
