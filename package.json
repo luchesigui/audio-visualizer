@@ -10,6 +10,18 @@
     "type": "git",
     "url": "git+https://github.com/guiluchesi/podcast-to-social.git"
   },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "@babel/preset-env"
+          ]
+        }
+      ]
+    ]
+  },
   "keywords": [],
   "author": "Guilherme Luchesi",
   "license": "ISC",
@@ -24,5 +36,18 @@
     "express-fileupload": "^1.1.6",
     "rimraf": "^3.0.2",
     "timecut": "^0.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babelify": "^10.0.0",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
   }
 }
