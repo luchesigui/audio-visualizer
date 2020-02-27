@@ -16,20 +16,20 @@
     <div class="grupo">
       <form data-testid="form" action="/api" method="post">
         <label for="cover">
-          Capa do Podcast / Album
+          Capa do Podcast / Album <small>(600x600)</small>
           <input required type="file" name="cover" id="cover" />
         </label>
         <label for="background">
-          Imagem de Fundo
+          Imagem de Fundo <small>(1920x1024)</small>
           <input required type="file" name="background" id="background" />
         </label>
         <label for="subtitle">
           Subtítulo (texto superior)
-          <input required type="text" placeholder="S01 EP02" name="subtitle" id="subtitle" autofocus />
+          <input required type="text" maxlength="45" placeholder="S01 EP02" name="subtitle" id="subtitle" />
         </label>
         <label for="titulo">
           Título (texto inferior)
-          <input required type="text" placeholder="Nome do episódio" name="title" id="title" />
+          <input required type="text" maxlength="30" placeholder="Nome do episódio" name="title" id="title" />
         </label>
         <label for="audio">
           Arquivo de Áudio
