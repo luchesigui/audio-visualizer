@@ -81,6 +81,10 @@ const config = {
       src: `${basePaths.template.srcBase}js/*.js`,
       dest: `${basePaths.template.destBase}js/`,
     },
+    img: {
+      src: `${basePaths.template.srcBase}img/*`,
+      dest: `${basePaths.template.destBase}img/`,
+    },
   },
   form: {
     style: {
@@ -105,6 +109,7 @@ const config = {
 exports.template = parallel(
   sassTask(config.template.style),
   concatJsTask(config.template.js),
+  moveTask(config.template.img),
 )
 
 exports.templateWatch = () => {
