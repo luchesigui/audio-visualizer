@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Roboto:400,700&display=swap" rel="stylesheet">
   <title>Podcast to Social</title>
 </head>
 <body>
@@ -38,10 +38,13 @@
         <button type="submit">Enviar</button>
       </form>
       <div class="exemplo">
-        <img src="assets/img/exemplo-podcast-to-social.jpeg" alt="Exemplo de visualização do Podcast to Social">
+        <img id="exemple-cover" src="assets/img/placeholder-cover.jpg" alt="Exemplo de capa">
+        <div class="title-holder">
+          <div id="epNumber" class="title">S01 EP02</div>
+          <div id="track" class="title">Nome do Episódio</div>
+        </div>
       </div>
     </div>
-  </div>
 
   <script>
     document.addEventListener('submit', submitHandler)
