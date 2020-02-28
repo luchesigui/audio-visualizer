@@ -4,8 +4,7 @@
   "description": "![](assets/img/lifehacking-player.jpg)",
   "main": "server.js",
   "scripts": {
-    "build": "gulp && node server.js",
-    "start": "node server.js"
+    "start": "gulp && node server.js"
   },
   "repository": {
     "type": "git",
