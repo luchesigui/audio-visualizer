@@ -32,7 +32,7 @@ app.post('/api', async (req, res) => {
     background.mv(`${publicPathBase}/${background.name}`);
 
     const videoPath = await buildVideo({
-      url: `${__dirname}/template.html?title=${title}&subtitle=${subtitle}&cover=${publicPathBase}/${cover.name}&background=${publicPathBase}/${background.name}`,
+      url: `${__dirname}/template.html?title=${title}&subtitle=${subtitle}&assetsPath=${publicPathBase}&cover=${cover.name}&background=${background.name}`,
       output: `${publicPathBase}/loop.mp4`
     });
 
