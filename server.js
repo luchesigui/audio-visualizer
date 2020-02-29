@@ -17,7 +17,7 @@ app.use(urlencoded({extended: true}));
 
 app.post('/api', async (req, res) => {
   const { title, subtitle } = req.body;
-  const { cover, background } = req.files;
+  const { cover, background, episode } = req.files;
 
   if (!req.files || !title || !subtitle ) {
     return res.status(400).json({
