@@ -9,13 +9,13 @@ const buildVideo = async (config) => {
       height: 720
     },
     selector: 'body',
-    fps: 24,
-    duration: 2.2,
+    fps: 30,
+    duration: 2.23,
     output: 'video.mp4',
     quiet: true,
     inputAudio: 'piloto.mp3',
     finalOutput: 'final.mp4',
-    convert: false,
+    convert: true,
   }
   
   console.log('Starting recording...')
@@ -38,16 +38,16 @@ const loopVideoToMp3 = async (config) => {
       '-stream_loop',
       '-1',
       '-i',
-      'video.mp4',
+      `${__dirname}/${config.output}`,
       '-i',
-      config.input,
+      `${__dirname}/${config.inputAudio}`,
       '-shortest',
       '-map',
       '0:v:0',
       '-map',
       '1:a:0',
       '-y',
-      config.finalOutput,
+      `${__dirname}/${config.finalOutput}`,
     ];
 
     console.log('Starting video loop for audio duration...')
