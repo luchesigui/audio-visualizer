@@ -1,18 +1,19 @@
-const changeImage = (src, target = false) => {
-  if(!src) {
+const changeImage = (basePath, src, target = false) => {
+  if(!basePath || !src) {
     return;
   }
 
+  const filePath = `${basePath}/${src}`
   if(target) {
     return document
       .querySelector(target)
       .style
-      .backgroundImage = `url(${src})`;
+      .backgroundImage = `url(${filePath})`;
   }
 
   document
     .getElementById('cover')
-    .src = src
+    .src = filePath
 }
 
 const changeText = (text, target) => {
@@ -21,8 +22,12 @@ const changeText = (text, target) => {
   }
 }
 
-const params = (new URL(document.location)).searchParams;
-changeText(params.get('title'), '#track')
-changeText(params.get('subtitle'), '#epNumber')
-changeImage(params.get('cover'));
-changeImage(params.get('background'), 'body');
+const objectifiedParams = Object.fromEntries(
+  (new URL(document.location)).searchParams
+)
+const { title, subtitle, assetsPath, cover, background, sound } = objectifiedParams
+
+changeText(title, '#track')
+changeText(subtitle, '#epNumber')
+changeImage(assetsPath, cover);
+changeImage(assetsPath, background, 'body');
