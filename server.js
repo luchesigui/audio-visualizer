@@ -17,7 +17,7 @@ app.use(urlencoded({extended: true}));
 
 app.post('/api', async (req, res) => {
   const { title, subtitle } = req.body;
-  const { cover, background, episode } = req.files;
+  const { cover, background, audio } = req.files;
 
   if (!req.files || !title || !subtitle ) {
     return res.status(400).json({
@@ -30,10 +30,13 @@ app.post('/api', async (req, res) => {
     const publicPathBase = `public/${pathBase}`
     cover.mv(`${publicPathBase}/${cover.name}`);
     background.mv(`${publicPathBase}/${background.name}`);
+    audio.mv(`${publicPathBase}/${audio.name}`);
 
     const videoPath = await buildVideo({
       url: `${__dirname}/template.html?title=${title}&subtitle=${subtitle}&assetsPath=${publicPathBase}&cover=${cover.name}&background=${background.name}`,
-      output: `${publicPathBase}/loop.mp4`
+      output: `${publicPathBase}/loop.mp4`,
+      inputAudio: `${publicPathBase}/${audio.name}`,
+      finalOutput: `${publicPathBase}/video.mp4`,
     });
 
     res.json({
