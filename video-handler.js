@@ -1,5 +1,5 @@
 const spawn = require('child_process').spawn;
-const timecut = require('timecut');
+const timecut = require('./timecut');
 const ffmpeg = require('ffmpeg-static');
 
 const buildVideo = async (config) => {
