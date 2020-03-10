@@ -1,6 +1,7 @@
 const submitHandler = (e) => {
   e.preventDefault();
-  // document.querySelector('button').setAttribute('disabled', true);
+  const button = document.querySelector('button');
+  button.setAttribute('disabled', true);
 
   const data = new FormData(e.target);
   fetch('/api', {
@@ -14,8 +15,10 @@ const submitHandler = (e) => {
     link.href = res.videoPath;
     link.setAttribute('download', '')
     link.click();
-
-    // document.querySelector('button').removeAttribute('disabled');
+  })
+  .finally(() => {
+    button.removeAttribute('disabled');
+    button.innerText = 'Enviar';
   })
 }
 
