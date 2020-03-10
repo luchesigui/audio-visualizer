@@ -1,6 +1,5 @@
 const spawn = require('child_process').spawn;
-const timecut = require('./timecut');
-const ffmpeg = require('ffmpeg-static');
+const timecut = require('timecut');
 
 const buildVideo = async (config) => {
   const defaultConfig = {
@@ -52,7 +51,7 @@ const loopVideoToMp3 = async (config) => {
     ];
 
     console.log('Starting video loop for audio duration...')
-    const convertProcess = spawn(ffmpeg, ffmpegArgs);
+    const convertProcess = spawn('ffmpeg', ffmpegArgs);
     convertProcess.stderr.setEncoding('utf8');
     convertProcess.stderr.on('data', (data) => {
       if(!config.quiet) {
